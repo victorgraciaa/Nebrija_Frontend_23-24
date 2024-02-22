@@ -1,0 +1,256 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+button {
+  color: inherit;
+}
+button, [role="button"] {
+  cursor: pointer;
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+}
+img,
+svg {
+  display: block;
+}
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-image: url("https://img.freepik.com/free-vector/flat-design-rainbow-background-design_23-2149574757.jpg");
+  background-size: 100%;
+  cursor: help;
+}
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.my-6 {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.my-4 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-8 {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.bg-\[\#86efac\] {
+  background-color: #86efac;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.py-6 {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.py-1 {
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+}
+.border-gray-500 {
+  border-color: #6b7280;
+}
+.bg-white {
+  background-color: #fff;
+}
+.flex {
+  display: flex;
+}
+.gap-8 {
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.max-w-screen-md {
+  max-width: 768px;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.border-2 {
+  border-width: 2px;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.hover\:bg-gray-200:hover {
+  background-color: #e5e7eb;
+}
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.lesson{
+  background-image: url("https://i.pinimg.com/736x/11/d2/0f/11d20f6131fc8f3856a6bd7991346bf0.jpg");
+  background-size: 100%;
+  color: white;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 22px;
+
+  padding: 16px;
+  max-width: 400px; 
+  margin: 40vh auto;
+
+  border: 8px solid violet;
+  border-style: outset;
+  box-sizing: border-box;
+
+  transition: all 0.3s ease;
+}
+
+.boton{
+  background-image: url("https://img.freepik.com/free-vector/hand-drawn-groovy-psychedelic-background_23-2149088958.jpg");
+  background-size: 100%;
+  color: red;
+  text-align: center;
+
+  font-size: 24px;
+  padding: 10px 20px;
+
+  position: fixed;
+  top: 10%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  -webkit-text-stroke: 1px black; 
+  text-stroke: 1px black; 
+
+  border-style: dotted;
+}
+
+.lesson:hover{
+  transform: scale(1.5);
+}
+
+.elefante {
+  position: fixed;
+  top: 70%;
+  left: 44%;
+  width: 140px;
+  height: 140px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.elefante:hover {
+  transform: translate(550px, -440px);
+}
+
+.video{
+  position: fixed;
+  top: 26%; 
+  right: 0;
+  margin: 40px; 
+}
+
+.anuncio {
+  position: fixed;
+  top: 26%;
+  left: 0;
+  margin: 40px; 
+  width: 800x;
+  height: 200px;
+
+  border: 6px solid #4ECDC4;
+  border-style: outset;
+  box-sizing: border-box;
+
+  --s: 400px;   
+  --b: 8px;     
+  --g: 3px;  
+  --c: #4ECDC4; 
+  
+  width: var(--s);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.anuncio:hover{
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+}
+
+.botonColores{
+  background-color: whitesmoke;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  position: fixed;
+  top: 25%; 
+  left: 14%;
+  font-size: 20px;
+}
+
+.botonColores:active{
+  background-color: turquoise;
+  color: white;
+}
+
+.circulo{
+  position: fixed;
+  top: 75%;
+  left: 77%;
+  width: 140px;
+  height: 140px;
+  animation: rotateCirculo 5s linear infinite;
+}
+
+@keyframes rotateCirculo{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
