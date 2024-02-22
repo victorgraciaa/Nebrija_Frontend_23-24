@@ -1,16 +1,11 @@
-# Fresh project
+# Práctica 1
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+Práctica 1 de la asignatura de Programación de Interfaces Web.
 
-### Usage
+## Funcionamiento
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+Cada vez que acceda a mi página principal se mostrará una lección aleatoria, proveninente de la API especificada en el guión de la práctica.
 
-Then start the project:
+Para acceder a una lección concreta, se deberá añadir "/número_de_lección" al final de la URL.
 
-```
-deno task start
-```
 
-This will watch the project directory and restart as necessary.
