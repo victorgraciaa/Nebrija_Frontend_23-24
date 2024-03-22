@@ -1,0 +1,18 @@
+.menu{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 20px;
+    background-color: #d83333;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    height: 60px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    
+}
+
+.menu:hover{
+    background-color: #a02121;
+}
