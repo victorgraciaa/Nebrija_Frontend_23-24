@@ -1,27 +1,38 @@
-import Axios from "npm:axios";
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import { Hero } from "../types.ts";
-import Contenedor from "../components/Contenedor.tsx";
-import AddHero from "../components/AddHero.tsx";
 import axios from "npm:axios";
+import Form from "../islands/Form.tsx";
 
-const Page = async (props: PageProps<Hero>) => {
+export const handler: Handlers = {
+  POST: async (req: Request, ctx: FreshContext) => {
+    try{
+      const params = await req.formData();
+      console.log(params)
+      const { name, imagen, sonido, creador } = Object.fromEntries(params);
+      console.log(name,"\n",imagen,"\n", sonido,"\n", creador);
+      const data = await axios.post("https://supermondongo.deno.dev/", {
+        name,
+        imagen,
+        sonido,
+        creador
+      }, );
+      return ctx.render(data);
+    }
+    catch(e){
+      console.error(e);
+      return new Response("Error", {status: 500});
+    }
+  },
+}
 
-    try {
-      const {data} = await axios.post(
-        "https://supermondongo.deno.dev/",
-        {
-          name: "",
-          image: "",
-          sound: ""
-        }
-      )
+const Page = (props: PageProps<Hero>) => {
+
+  try {
 
       return (
         <div>
-          <AddHero/>
+          <Form/>
         </div>
-        
       );
 
   } catch (e) {

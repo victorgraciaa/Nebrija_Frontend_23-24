@@ -5,60 +5,49 @@ import { JSX } from "preact";
 export const Form: FunctionComponent = () => {
     const [error, setError] = useState<string>("");
     const [name, setName] = useState<string>("");
-    const [age, setAge] = useState<number | undefined>();
-    const [email, setEmail] = useState<string>("");
+    const [image, setImage] = useState<string>("");
+    const [sound, setSound] = useState<string>("");
+    const [creator, setCreator] = useState<string>("");
   
     const submitHandler = async (
       e: JSX.TargetedEvent<HTMLFormElement, Event>,
     ) => {
       e.preventDefault();
       const errorMsg: string[] = [];
-      if (!age || age < 18) {
-        errorMsg.push("Age must be greater than 18");
-      }
+      
       if (name === "") {
         errorMsg.push("You must provide a name");
       }
-      if (email === "") {
-        errorMsg.push("You must provide a mail");
+      if (image === "") {
+        errorMsg.push("You must provide an URL for the image");
+      }
+      if (sound === "") {
+        errorMsg.push("You must provide an URL for the sound");
+      }
+      if (creator === "") {
+        errorMsg.push("You must provide a creator");
       }
   
-      if (errorMsg.length > 0) setError(errorMsg.join(" | "));
+      if (errorMsg.length > 0){
+        setError(errorMsg.join(" | "));
+      }
       else {
         setError("");
+        console.log("DATOS", name, image, sound, creator);
         e.currentTarget.submit();
       }
-    };
-  
-    const emailExists = async (email: string): Promise<boolean> => {
-      try {
-        const res = await fetch("/api/checkmail", {
-          method: "POST",
-          body: JSON.stringify({ email }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const data = await res.json();
-        return data.exists;
-      } catch (e) {
-        console.error(e);
-        return true;
-      }
-    };
-  
-    const underAge = (age: number) => age < 18;
+    };    
   
     return (
       <div class="form">
-        <h1>Introduce tus datos</h1>
+        <h1>Introduce los datos de tu héroe</h1>
         <form
-          action="/"
+          action="/add"
           method="POST"
           onSubmit={submitHandler}
         >
           <div>
-            <label for="name">Name</label>
+            <label for="name">Nombre: </label>
           </div>
           <div>
             <input
@@ -71,44 +60,44 @@ export const Form: FunctionComponent = () => {
           </div>
   
           <div>
-            <label for="email">Email</label>
+            <label for="imagen">URL de la imagen: </label>
           </div>
           <div>
             <input
               onFocus={(e) => setError("")}
-              onInput={(e) => setEmail(e.currentTarget.value)}
-              onBlur={async (e) => {
-                if (await emailExists(e.currentTarget.value)) {
-                  setError(
-                    error + " | Email already exists",
-                  );
-                }
-              }}
-              type="email"
-              id="email"
-              name="email"
+              onInput={(e) => setImage(e.currentTarget.value)}
+              type="text"
+              id="imagen"
+              name="imagen"
             />
           </div>
   
           <div>
-            <label for="age">Age</label>
+            <label for="sonido">URL del sonido: </label>
           </div>
           <div>
             <input
               onFocus={(e) => setError("")}
-              type="number"
-              id="age"
-              name="age"
-              onInput={(e) => setAge(Number(e.currentTarget.value))}
-              onBlur={(e) => {
-                if (underAge(Number(e.currentTarget.value))) {
-                  setError(
-                    error + " | Age must be greater than 18",
-                  );
-                }
-              }}
+              type="text"
+              id="sonido"
+              name="sonido"
+              onInput={(e) => setSound(e.currentTarget.value)}
             />
           </div>
+
+          <div>
+            <label for="creador">Creador: </label>
+          </div>
+          <div>
+            <input
+              onFocus={(e) => setError("")}
+              type="text"
+              id="creador"
+              name="creador"
+              onInput={(e) => setCreator(e.currentTarget.value)}
+            />
+          </div>
+
           <div>
             <button
               type="submit"
@@ -124,8 +113,9 @@ export const Form: FunctionComponent = () => {
               class="reset"
               onClick={(e) => {
                 setName("");
-                setEmail("");
-                setAge(undefined);
+                setImage("");
+                setSound("");
+                setCreator("");
                 setError("");
               }}
             >
