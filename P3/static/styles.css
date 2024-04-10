@@ -1,3 +1,7 @@
+@import url("/perfil.css");
+@import url("/menu.css");
+@import url("/SignupForm.css");
+@import url("/busqueda.css");
 
 *,
 *::before,
@@ -127,3 +131,9 @@ html {
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
+
+img.img-m {
+  width: 200px;
+  height: 200px;
+}
+

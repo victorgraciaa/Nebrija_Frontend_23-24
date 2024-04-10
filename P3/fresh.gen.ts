@@ -2,24 +2,36 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $_name_ from "./routes/[name].tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $_layout from "./routes/_layout.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
+import * as $filter from "./routes/filter.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
-import * as $Counter from "./islands/Counter.tsx";
+import * as $signin from "./routes/signin.tsx";
+import * as $signup from "./routes/signup.tsx";
+import * as $SigninForm from "./islands/SigninForm.tsx";
+import * as $SignupForm from "./islands/SignupForm.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
+    "./routes/[name].tsx": $_name_,
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/_layout.tsx": $_layout,
     "./routes/api/joke.ts": $api_joke,
+    "./routes/filter.tsx": $filter,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/signin.tsx": $signin,
+    "./routes/signup.tsx": $signup,
   },
   islands: {
-    "./islands/Counter.tsx": $Counter,
+    "./islands/SigninForm.tsx": $SigninForm,
+    "./islands/SignupForm.tsx": $SignupForm,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
